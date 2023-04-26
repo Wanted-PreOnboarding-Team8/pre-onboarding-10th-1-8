@@ -22,7 +22,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint --cache \"./src/**/*.{ts,tsx,js,jsx}\"",
     "lint:fix": "eslint --fix \"./src/**/*.{ts,tsx,js,jsx}\"",
-    "postinstall": "chmod ug+x .husky/* && husky install",
+    "postinstall": "husky install",
     "format": "prettier --cache --write ."
   },
   "browserslist": {
