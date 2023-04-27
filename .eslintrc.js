@@ -24,6 +24,8 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'object-curly-newline': 0,
+    'arrow-parens': ['error', 'as-needed'],
     '@typescript-eslint/explicit-function-return-type': 'off',
     'linebreak-style': 0,
     'jsx-a11y/label-has-associated-control': [
