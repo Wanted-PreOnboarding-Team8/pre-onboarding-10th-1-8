@@ -1,7 +1,7 @@
 import axios, { type InternalAxiosRequestConfig } from 'axios';
 import BASE_URL from './constant';
 
-const TodoApi = axios.create({
+export const TodoApi = axios.create({
   baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/json',
