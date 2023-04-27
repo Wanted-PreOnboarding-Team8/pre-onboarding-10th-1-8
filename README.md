@@ -4,16 +4,16 @@
 
 ## 목차
 
--   [1️. 사전 선발 과제](#🔗-사전-선발-과제)
--   [2. 팀 규칙](#✏️-팀-규칙)
+-   [사전 선발 과제](#🔗-사전-선발-과제)
+-   [팀 규칙](#✏️-팀-규칙)
     -   [기능 구현](#1️⃣-기능-구현)
     -   [기능 구현](#1️⃣-기능-구현)
--   [3. 서비스 구성](#📖-서비스-구성)
+-   [서비스 구성](#📖-서비스-구성)
     -   [기능 구현](#1️⃣-기능-구현)
     -   [페이지별 화면](#2️⃣-페이지별-화면)
     -   [기술 스택](#3️⃣-기술-스택)
--   [4. Best Practice](#👑-Best-Practice)
--   [4. 실행 방법](#⚙️-실행-방법)
+-   [Best Practice](#👑-Best-Practice)
+-   [실행 방법](#⚙️-실행-방법)
 
 ## 🔗 사전 선발 과제
 
@@ -73,8 +73,7 @@
 ![typescript](https://user-images.githubusercontent.com/123078739/234895162-42f905c6-765d-44d2-bcb1-b011286ef6b2.svg)
 ![styledcomponents](https://user-images.githubusercontent.com/123078739/234895185-7fd6c334-faca-4520-8551-2f20b32f085e.svg)
 ![eslint](https://user-images.githubusercontent.com/123078739/234895191-c1198a7b-9e2e-499a-8e61-c3b87bf8e2c2.svg)
-
-
+<br /><br />
 ## 👑 Best Practice
 
 > **Best Practice란 모범사례라는 말로서, 특정 문제를 효과적으로 해결하기 위한 가장 성공적인 해결책 또는 방법론을 의미합니다.**
