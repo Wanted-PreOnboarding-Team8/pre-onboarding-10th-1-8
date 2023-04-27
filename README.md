@@ -2,7 +2,7 @@
 
 > **원티드 프리온보딩 프론트엔드 인턴십 선발 과제의 Best Pratice들로 Todo App 재구성**
 
-### 목차
+## 목차
 
 -   [1️. 사전 선발 과제](#🔗-사전-선발-과제)
 -   [2. 팀 규칙](#✏️-팀-규칙)
@@ -69,8 +69,11 @@
 | 로그인 페이지                                                                                                 | Todo 페이지                                                                                                      |
 
 ### 3️⃣ 기술 스택
+![react](https://user-images.githubusercontent.com/123078739/234895132-18ab503a-fcc7-486d-b89a-cb0cc1f7796b.svg)
+![typescript](https://user-images.githubusercontent.com/123078739/234895162-42f905c6-765d-44d2-bcb1-b011286ef6b2.svg)
+![styledcomponents](https://user-images.githubusercontent.com/123078739/234895185-7fd6c334-faca-4520-8551-2f20b32f085e.svg)
+![eslint](https://user-images.githubusercontent.com/123078739/234895191-c1198a7b-9e2e-499a-8e61-c3b87bf8e2c2.svg)
 
-(미작성 : 이미지 파일로 첨부할 예정)
 
 ## 👑 Best Practice
 
