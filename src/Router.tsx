@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
+import Todo from './pages/Todo';
 import Redirect from './pages/Redirect';
 
 export default function Router() {
@@ -13,7 +14,7 @@ export default function Router() {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<Register />} />
-        {/* <Route path="/todo" element={<Todo />} /> */}
+        <Route path="/todo" element={<Todo />} />
       </Routes>
     </>
   );
