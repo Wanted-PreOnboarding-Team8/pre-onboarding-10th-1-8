@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.css';
+import Router from './Router';
 
 function App() {
-  console.log('아무ㄹㅇㄴㅁㄹㅇㄴㄹ거나');
-  return <div className="App"></div>;
+  return <Router />;
 }
 
 export default App;
