@@ -8,6 +8,7 @@
 - [2. 팀 규칙](#✏️-팀-규칙)
   - [커밋 컨벤션](#1️⃣-커밋-컨벤션)
   - [타입스크립트 컨벤션](#2️⃣-타입스크립트-컨벤션)
+  - [폴더 구조](#3️⃣-폴더-구조)
 - [3. 기술 스택](#🛠️-기술-스택)
 - [4. 서비스 소개](#📖-서비스-소개)
   - [서비스 도메인](#0️⃣-서비스-도메인)
@@ -55,15 +56,17 @@
 
 - 인터페이스명 마지막에 Type 붙이기 ( 예: ExampleType )
 
-### 3️⃣ 폴더구조
+### 3️⃣ 폴더 구조
 - 컴포넌트의 스타일과 로직은 관련있는 한 폴더 내에서 별도의 파일로 관리.
 
 ## 🛠️ 기술 스택
-
-![react](https://user-images.githubusercontent.com/123078739/234895132-18ab503a-fcc7-486d-b89a-cb0cc1f7796b.svg)
+![html5](https://user-images.githubusercontent.com/123078739/235159304-bc4c2c81-6e52-48a5-9d29-ca70671d3821.svg)
+![css3](https://user-images.githubusercontent.com/123078739/235159328-5e1ebf76-f75c-412c-b51d-463977276dff.svg)
 ![typescript](https://user-images.githubusercontent.com/123078739/234895162-42f905c6-765d-44d2-bcb1-b011286ef6b2.svg)
+![react](https://user-images.githubusercontent.com/123078739/234895132-18ab503a-fcc7-486d-b89a-cb0cc1f7796b.svg)
 ![styledcomponents](https://user-images.githubusercontent.com/123078739/234895185-7fd6c334-faca-4520-8551-2f20b32f085e.svg)
 ![eslint](https://user-images.githubusercontent.com/123078739/234895191-c1198a7b-9e2e-499a-8e61-c3b87bf8e2c2.svg)
+![vercel](https://user-images.githubusercontent.com/123078739/235159384-253eb589-03dd-4f4e-97f0-eb07a6c928dd.svg)
 
 ## 📖 서비스 소개
 
@@ -86,7 +89,7 @@
 | ![login](https://user-images.githubusercontent.com/123078739/234795207-58f492cc-e367-407d-9875-d56e7a9f0e36.png) | ![Todo](https://user-images.githubusercontent.com/123078739/234795207-58f492cc-e367-407d-9875-d56e7a9f0e36.png)     |
 | 로그인 페이지                                                                                                    | Todo 페이지                                                                                                         |
 
-## 👑 트러블 
+## 👑 Best Practice
 
 > **Best Practice란 모범사례라는 말로서, 특정 문제를 효과적으로 해결하기 위한 가장 성공적인 해결책 또는 방법론을 의미합니다.**
 
