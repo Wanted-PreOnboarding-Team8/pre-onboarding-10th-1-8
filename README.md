@@ -54,6 +54,9 @@
 
 - 인터페이스명 마지막에 Type 붙이기 ( 예: ExampleType )
 
+### 3️⃣ 폴더구조
+- 컴포넌트의 스타일과 로직은 관련있는 한 폴더 내에서 별도의 파일로 관리.
+
 ## 🛠️ 기술 스택
 
 ![react](https://user-images.githubusercontent.com/123078739/234895132-18ab503a-fcc7-486d-b89a-cb0cc1f7796b.svg)
