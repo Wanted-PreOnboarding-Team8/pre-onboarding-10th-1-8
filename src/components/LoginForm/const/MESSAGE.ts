@@ -4,4 +4,5 @@ const MESSAGE = Object.freeze({
   INPUTPASSWORD: '비밀번호를 입력해 주세요',
   PASSWORDERROR: '8자리 이상이어야 합니다.',
 });
+
 export default MESSAGE;
