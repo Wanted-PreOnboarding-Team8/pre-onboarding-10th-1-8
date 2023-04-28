@@ -12,6 +12,11 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     height: 100vh;
   }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 export default GlobalStyle;
