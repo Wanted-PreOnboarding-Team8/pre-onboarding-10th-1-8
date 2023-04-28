@@ -10,7 +10,6 @@ export const TodoApi = axios.create({
 
 TodoApi.interceptors.request.use((request: InternalAxiosRequestConfig) => {
   const accessToken = localStorage.getItem('access_token');
-
   if (accessToken !== null) {
     request.headers.authorization = `bearer ${accessToken}`;
   }
