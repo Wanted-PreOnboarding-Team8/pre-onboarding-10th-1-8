@@ -17,7 +17,7 @@ export default function useAuthApi(url: string) {
       return response;
     } catch (error: unknown) {
       if (error instanceof AxiosError) {
-        alert(error.message);
+        alert(error.response?.data.message);
       }
     }
     if (response === undefined) {
