@@ -160,7 +160,7 @@ await mutate({ method: 'DELETE', id });
 - 공통 Button 컴포넌트를 만들어 적용하여 결과적으로 반복되는 코드를 줄일 수 있었습니다.
 
 ❓ 기존 TodoItem 코드
-```
+```javascript
  {isEdit ? (
         <div>
           <button type="button" data-testid="submit-button" onClick={handleSubmit}>
@@ -189,7 +189,7 @@ await mutate({ method: 'DELETE', id });
 ```
 
 ❓ components/atom에 모듈화된 Button 컴포넌트
-```
+```javascript
 interface ButtonProps {
   dataId: string;
   buttonText: string;
@@ -205,8 +205,7 @@ function Button({ dataId, buttonText, onClickFn }: ButtonProps) {
 }
 
 export default Button;
-```
-
+```javascript
 ❓ 수정된 TodoItem 버튼
 ```
 <div>
