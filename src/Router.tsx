@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import Home from './pages/Home';
 import Todo from './pages/Todo';
 import Redirect from './pages/Redirect';
+import NotFound from './pages/NotFound';
 
 export default function Router() {
   return (
@@ -15,6 +16,7 @@ export default function Router() {
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<Register />} />
         <Route path="/todo" element={<Todo />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
