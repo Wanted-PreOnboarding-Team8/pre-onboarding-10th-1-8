@@ -69,7 +69,7 @@
 
 ### 0️⃣ 서비스 도메인
 
-[서비스 페이지로 이동](pre-onboarding-10th-1-8.vercel.app)
+[서비스 페이지로 이동](https://pre-onboarding-10th-1-8.vercel.app/)
 
 ### 1️⃣ 기능 구현
 
