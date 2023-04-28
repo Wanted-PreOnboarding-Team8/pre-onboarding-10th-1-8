@@ -1,57 +1,10 @@
 import React, { type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { type AxiosResponse } from 'axios';
-import styled from 'styled-components';
-import UseInputValidation from '../hooks/useInputValidation';
-import { type FormType } from '../hooks/useAuthApi';
-import MESSAGE from './MESSAGE';
-
-const ErrorMessage = styled.p`
-  color: #ff7700;
-  font-weight: 400;
-`;
-
-const ValidEmoji = styled(ErrorMessage)``;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-`;
-
-const InputRow = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
-
-const Input = styled.input`
-  width: 500px;
-  height: 40px;
-  border-radius: 5px;
-  border: none;
-  background-color: lightgray;
-  padding-left: 10px;
-  :focus {
-    outline: none;
-  }
-`;
-
-const Label = styled.label`
-  cursor: pointer;
-`;
-
-const Button = styled.button`
-  cursor: pointer;
-  width: 100%;
-  height: 30px;
-  border-radius: 5px;
-  border: 1px solid gray;
-
-  :hover {
-    background-color: #e6dede;
-  }
-`;
+import UseInputValidation from '../../hooks/useInputValidation';
+import { type FormType } from '../../hooks/useAuthApi';
+import MESSAGE from './const/MESSAGE';
+import * as S from './LoginFormStyle';
 
 interface LoginFormType {
   buttonText: '로그인' | '회원가입' | string;
@@ -93,10 +46,10 @@ function LoginForm({ buttonText, type, onAuthSubmit }: LoginFormType) {
   };
 
   return (
-    <Form className="login-form" onSubmit={handleSubmit}>
-      <InputRow>
-        <Label htmlFor="email">Email:</Label>
-        <Input
+    <S.Form className="login-form" onSubmit={handleSubmit}>
+      <S.InputRow>
+        <S.LoginFormLabel htmlFor="email">Email:</S.LoginFormLabel>
+        <S.LoginFormInput
           data-testid="email-input"
           id="email"
           value={email}
@@ -104,15 +57,15 @@ function LoginForm({ buttonText, type, onAuthSubmit }: LoginFormType) {
           placeholder={MESSAGE.INPUTEMAIL}
         />
         {isEmailValid ? (
-          <ValidEmoji>👍</ValidEmoji>
+          <S.ValidEmoji>👌</S.ValidEmoji>
         ) : (
-          <ErrorMessage>{MESSAGE.EMAILERROR}</ErrorMessage>
+          <S.ErrorMessage>{MESSAGE.EMAILERROR}</S.ErrorMessage>
         )}
-      </InputRow>
+      </S.InputRow>
 
-      <InputRow>
-        <Label htmlFor="password">Password:</Label>
-        <Input
+      <S.InputRow>
+        <S.LoginFormLabel htmlFor="password">Password:</S.LoginFormLabel>
+        <S.LoginFormInput
           type="password"
           data-testid="password-input"
           id="password"
@@ -121,20 +74,20 @@ function LoginForm({ buttonText, type, onAuthSubmit }: LoginFormType) {
           placeholder={MESSAGE.INPUTPASSWORD}
         />
         {isPasswordValid ? (
-          <ValidEmoji>👍</ValidEmoji>
+          <S.ValidEmoji>👌</S.ValidEmoji>
         ) : (
-          <ErrorMessage>{MESSAGE.PASSWORDERROR}</ErrorMessage>
+          <S.ErrorMessage>{MESSAGE.PASSWORDERROR}</S.ErrorMessage>
         )}
-      </InputRow>
+      </S.InputRow>
 
-      <Button
+      <S.LoginFormBtn
         data-testid={`${type}-button`}
         type="submit"
         disabled={!isEmailValid || !isPasswordValid}
       >
         {buttonText}
-      </Button>
-    </Form>
+      </S.LoginFormBtn>
+    </S.Form>
   );
 }
 

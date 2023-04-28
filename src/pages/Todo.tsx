@@ -1,6 +1,6 @@
 import React from 'react';
-import AddTodo from '../components/AddTodo';
-import TodoItem from '../components/TodoItem';
+import AddTodo from '../components/AddTodo/AddTodo';
+import TodoItem from '../components/TodoItem/TodoItem';
 import useTodos from '../hooks/useTodo';
 
 function Todo() {

@@ -1,24 +1,25 @@
 import { useState, useEffect } from 'react';
 import { AxiosError, type AxiosResponse, type AxiosRequestConfig } from 'axios';
 import { TodoApi } from '../api/TodoApi';
-import STATUS from './const';
+import STATUS, { API } from './const';
 
 export interface Todo {
   id: number;
   todo: string;
   isCompleted: boolean;
-  // userId?: number;
 }
 
+type Method = 'POST' | 'PUT' | 'DELETE';
+
 export interface Mutate {
-  method: 'POST' | 'PUT' | 'DELETE';
+  method: Method;
   id?: number;
   body?: FormData | { todo: string; isCompleted?: boolean };
 }
 
 interface Response {
   response: AxiosResponse<Todo>;
-  method: 'POST' | 'PUT' | 'DELETE';
+  method: Method;
   id?: number;
 }
 
@@ -30,8 +31,6 @@ interface ErrorResponse {
 
 type RequsetType = AxiosRequestConfig;
 
-const TODOS = 'todos';
-
 export default function useTodos() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [error, setError] = useState<AxiosError<ErrorResponse>>();
@@ -40,7 +39,7 @@ export default function useTodos() {
   useEffect(() => {
     const getTodos = async (): Promise<void> => {
       try {
-        const result = await TodoApi.get<Todo[]>(`/${TODOS}`);
+        const result = await TodoApi.get<Todo[]>(`/${API.TODOS}`);
         if (result.status === 200) {
           setTodos(result.data);
         }
@@ -58,10 +57,10 @@ export default function useTodos() {
   const generateRequest = ({ method, id, body }: Mutate) => {
     const request: RequsetType = {
       method,
-      url: `${TODOS}`,
+      url: `${API.TODOS}`,
     };
     if (id !== null && id !== undefined) {
-      request.url = `${TODOS}/${id}`;
+      request.url = `${API.TODOS}/${id}`;
     }
     return body === null ? request : { ...request, data: body };
   };
