@@ -49,7 +49,7 @@
 - Remove : 파일 삭제
 ```
 
-예시) Feat : 로그인 기능정수정
+예시) Feat: 로그인 기능 수정
 
 ### 2️⃣ 타입스크립트 컨벤션
 
@@ -67,7 +67,7 @@
 
 ## 📖 서비스 소개
 
-### 0️⃣-서비스-도메인
+### 0️⃣ 서비스 도메인
 
 > pre-onboarding-10th-1-8.vercel.app
 
@@ -94,14 +94,14 @@
 
 ❓best practice인 이유
 
-- 코드의 응집도와 유지 보수성이 올리기 위해 setter를 한 군데서 관리하기로 하였습니다.
+- 코드의 응집도와 유지 보수성이 올리기 위해 setter를 한 군데서 관리하기로 하였습니다.   
 - 하위 컴포넌트에 setter를 직접 내려보내는 기존 방식에서, 상위 레벨인 Todo Page에 setter를 포함한 함수를 두고 해당 함수를 하위 컴포넌트(AddTodo, TodoList)로 내려보내도록 수정했습니다.
 
 🔍 코드 배치
 
-- Todo Page에 Todo 데이터를 조작하고 setter에 넣는 함수를 배치하였습니다.
-- AddTodo에서 input을 통해 입력된 데이터를 위에서 props로 받은 함수에 매개변수로 전달했습니다.
-- TodoList에서는 조작된 데이터를 렌더링하는 역할만 담당하도록 했습니다.
+- Todo Page에 Todo 데이터를 조작하고 setter에 넣는 함수를 배치하였습니다.   
+- AddTodo에서 input을 통해 입력된 데이터를 위에서 props로 받은 함수에 매개변수로 전달했습니다.   
+- TodoList에서는 조작된 데이터를 렌더링하는 역할만 담당하도록 했습니다.   
 
 ### 📌 api 콜 로직을 커스텀 훅으로 관리하기 vs. api 콜 함수들을 따로 관리하기
 
@@ -156,7 +156,7 @@ export const updateTodo = async (id, updateTodoRequest) => {
 // return mutate
 ```
 
-- 결과적으로 함수 호출 부분에서 커스텀 훅으로 쓰고 읽기 편하고, 여러 api를 관리하는 훅으로서 유지보수하기 편해졌다고 판단한 custom 훅으로써 best practice 로 정하였습니다.
+- 결과적으로 함수 호출 부분에서 커스텀 훅으로 쓰고 읽기 편하고, 여러 api를 관리하는 훅으로서 유지보수하기 편해졌다고 판단한 custom 훅으로써 best practice 로 정하였습니다.   
 
 ```javascript
 await mutate({ method: 'PUT', id, body: todo });
@@ -164,7 +164,7 @@ await mutate({ method: 'DELETE', id });
 ```
 
 📌 Button 뷰 컴포넌트 모듈화
-- TodoItem에서 제출/취소 버튼과 수정/삭제 버튼의 뷰 로직이 중복되는 코드를 발견하였습니다.
+- TodoItem에서 제출/취소 버튼과 수정/삭제 버튼의 뷰 로직이 중복되는 코드를 발견하였습니다.   
 - 공통 Button 컴포넌트를 만들어 적용하여 결과적으로 반복되는 코드를 줄일 수 있었습니다.
 
 ❓ 기존 TodoItem 코드
@@ -196,7 +196,7 @@ await mutate({ method: 'DELETE', id });
       )}
 ```
 
-❓ components/atom에 모듈화된 Button 컴포넌트
+❓ components/atom에 모듈화된 Button 컴포넌트   
 ```javascript
 interface ButtonProps {
   dataId: string;
@@ -214,7 +214,7 @@ function Button({ dataId, buttonText, onClickFn }: ButtonProps) {
 
 export default Button;
 ```javascript
-❓ 수정된 TodoItem 버튼
+❓ 수정된 TodoItem 버튼   
 ```
 <div>
   <Button
