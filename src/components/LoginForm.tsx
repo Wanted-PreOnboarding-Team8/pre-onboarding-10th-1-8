@@ -5,15 +5,6 @@ import styled from 'styled-components';
 import UseInputValidation from '../hooks/useInputValidation';
 import { type FormType } from '../hooks/useAuthApi';
 import MESSAGE from './MESSAGE';
-// import { type FormType, type ApiError } from '../hooks/useAuthApi';
-
-const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100dvh;
-`;
 
 const ErrorMessage = styled.p`
   color: #ff7700;
@@ -66,8 +57,6 @@ interface LoginFormType {
   buttonText: '로그인' | '회원가입' | string;
   type: 'signin' | 'signup' | string;
   onAuthSubmit: (form: FormType) => Promise<AxiosResponse>;
-  // 옵션2: ApiError 사용하는 방식
-  // onAuthSubmit: (form: FormType) => Promise<AxiosResponse | ApiError>;
 }
 
 function LoginForm({ buttonText, type, onAuthSubmit }: LoginFormType) {
@@ -91,7 +80,7 @@ function LoginForm({ buttonText, type, onAuthSubmit }: LoginFormType) {
       email,
       password,
     };
-    // page단에서 props로 넘겨받은 함수 호출
+
     const response = await onAuthSubmit(formData);
 
     const { status } = response;
@@ -104,50 +93,48 @@ function LoginForm({ buttonText, type, onAuthSubmit }: LoginFormType) {
   };
 
   return (
-    <FormContainer>
-      <Form className="login-form" onSubmit={handleSubmit}>
-        <InputRow>
-          <Label htmlFor="email">Email:</Label>
-          <Input
-            data-testid="email-input"
-            id="email"
-            value={email}
-            onChange={handleEmailChange}
-            placeholder={MESSAGE.INPUTEMAIL}
-          />
-          {isEmailValid ? (
-            <ValidEmoji>👍</ValidEmoji>
-          ) : (
-            <ErrorMessage>{MESSAGE.EMAILERROR}</ErrorMessage>
-          )}
-        </InputRow>
+    <Form className="login-form" onSubmit={handleSubmit}>
+      <InputRow>
+        <Label htmlFor="email">Email:</Label>
+        <Input
+          data-testid="email-input"
+          id="email"
+          value={email}
+          onChange={handleEmailChange}
+          placeholder={MESSAGE.INPUTEMAIL}
+        />
+        {isEmailValid ? (
+          <ValidEmoji>👍</ValidEmoji>
+        ) : (
+          <ErrorMessage>{MESSAGE.EMAILERROR}</ErrorMessage>
+        )}
+      </InputRow>
 
-        <InputRow>
-          <Label htmlFor="password">Password:</Label>
-          <Input
-            type="password"
-            data-testid="password-input"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-            placeholder={MESSAGE.INPUTPASSWORD}
-          />
-          {isPasswordValid ? (
-            <ValidEmoji>👍</ValidEmoji>
-          ) : (
-            <ErrorMessage>{MESSAGE.PASSWORDERROR}</ErrorMessage>
-          )}
-        </InputRow>
+      <InputRow>
+        <Label htmlFor="password">Password:</Label>
+        <Input
+          type="password"
+          data-testid="password-input"
+          id="password"
+          value={password}
+          onChange={handlePasswordChange}
+          placeholder={MESSAGE.INPUTPASSWORD}
+        />
+        {isPasswordValid ? (
+          <ValidEmoji>👍</ValidEmoji>
+        ) : (
+          <ErrorMessage>{MESSAGE.PASSWORDERROR}</ErrorMessage>
+        )}
+      </InputRow>
 
-        <Button
-          data-testid={`${type}-button`}
-          type="submit"
-          disabled={!isEmailValid || !isPasswordValid}
-        >
-          {buttonText}
-        </Button>
-      </Form>
-    </FormContainer>
+      <Button
+        data-testid={`${type}-button`}
+        type="submit"
+        disabled={!isEmailValid || !isPasswordValid}
+      >
+        {buttonText}
+      </Button>
+    </Form>
   );
 }
 

@@ -14,9 +14,7 @@ function AddTodo({ mutate }: AddTodoProps) {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append('todo', todo);
-    await mutate({ method: 'POST', body: data });
+    await mutate({ method: 'POST', body: { todo } });
     setTodo('');
   };
 

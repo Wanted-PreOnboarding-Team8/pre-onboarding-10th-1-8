@@ -13,7 +13,7 @@ export interface Todo {
 export interface Mutate {
   method: 'POST' | 'PUT' | 'DELETE';
   id?: number;
-  body?: FormData | { todo: string; isCompleted: boolean };
+  body?: FormData | { todo: string; isCompleted?: boolean };
 }
 
 interface Response {
@@ -123,14 +123,11 @@ export default function useTodos() {
           break;
       }
     }
-
-    setApiResponse(undefined);
-  }, [apiResponse, mutate]);
+  }, [apiResponse]);
 
   useEffect(() => {
     if (error != null) {
       alert(error.response?.data.message);
-      // setError(undefined);
     }
   }, [error]);
 
