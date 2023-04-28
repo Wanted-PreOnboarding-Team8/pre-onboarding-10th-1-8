@@ -128,27 +128,22 @@ export const updateTodo = async (id, updateTodoRequest) => {
 - 커스텀 훅으로 관리했을 때 반복되는 코드를 하나의 함수로 합칠 수 있었지만 함수하나가 CRUD 를 전부 담당하게 되어 책임이 무거워 지는 느낌을 주었습니다.
 
 ```javascript
-const mutate = async (args: Mutate) => {
-  const { method, id } = args;
-  let result: AxiosResponse;
+ const mutate = async (args: Mutate) => {
+    const request = generateRequest(args);
 
-  const request = generateRequest(args);
-  try {
-    result = await TodoApi(request);
-    const { status } = result;
+    try {
+      const result = await TodoApi(request);
+      const { status } = result;
 
-    if (status === STATUS.OK || status === STATUS.CREATED) {
-      setApiResponse({ response: result, method });
+      if (status === STATUS.OK || status === STATUS.CREATED || status === STATUS.NO_CONTENT) {
+        setApiResponse({ response: result, ...args });
+      }
+    } catch (axiosError) {
+      if (axiosError instanceof AxiosError) {
+        setError(axiosError);
+      }
     }
-    if (status === STATUS.NO_CONTENT) {
-      setApiResponse({ response: result, method, id });
-    }
-  } catch (axiosError) {
-    if (axiosError instanceof AxiosError) {
-      setError(axiosError);
-    }
-  }
-};
+  };
 // ...
 // return mutate
 ```
