@@ -111,13 +111,11 @@ npm start
 
 ### 2️⃣ 페이지별 화면
 
-[메인]()
-
 |                                                                                                                  |                                                                                                                     |
 | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| ![main](https://user-images.githubusercontent.com/123078739/234795207-58f492cc-e367-407d-9875-d56e7a9f0e36.png)  | ![register](https://user-images.githubusercontent.com/123078739/234795207-58f492cc-e367-407d-9875-d56e7a9f0e36.png) |
+| ![main](https://user-images.githubusercontent.com/123078739/235173145-0f41789d-7e76-48f9-b3d1-ab5c720ccf44.png)  | ![register](https://user-images.githubusercontent.com/123078739/235173218-2e67c2f7-5047-47f8-9645-22a01f1676ea.png) |
 | 메인 페이지                                                                                                      | 회원가입 페이지                                                                                                     |
-| ![login](https://user-images.githubusercontent.com/123078739/234795207-58f492cc-e367-407d-9875-d56e7a9f0e36.png) | ![Todo](https://user-images.githubusercontent.com/123078739/234795207-58f492cc-e367-407d-9875-d56e7a9f0e36.png)     |
+| ![login](https://user-images.githubusercontent.com/123078739/235173283-989dace8-e769-485b-a80a-ea3791257f77.png) | ![todo](https://user-images.githubusercontent.com/123078739/235173337-b81db6da-1013-4195-bb42-7908e1bf4f59.png)     |
 | 로그인 페이지                                                                                                    | Todo 페이지                                                                                                         |
 
 ## 👑 Best Practice
