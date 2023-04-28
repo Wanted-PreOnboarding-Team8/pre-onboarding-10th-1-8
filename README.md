@@ -78,7 +78,7 @@
 | ![login](https://user-images.githubusercontent.com/123078739/234795207-58f492cc-e367-407d-9875-d56e7a9f0e36.png) | ![Todo](https://user-images.githubusercontent.com/123078739/234795207-58f492cc-e367-407d-9875-d56e7a9f0e36.png)     |
 | 로그인 페이지                                                                                                    | Todo 페이지                                                                                                         |
 
-## 👑 Best Practice
+## 👑 트러블 
 
 > **Best Practice란 모범사례라는 말로서, 특정 문제를 효과적으로 해결하기 위한 가장 성공적인 해결책 또는 방법론을 의미합니다.**
 
@@ -155,9 +155,74 @@ await mutate({ method: 'PUT', id, body: todo });
 await mutate({ method: 'DELETE', id });
 ```
 
-📌 Router 파일 분리하여 관리
+📌 Button 뷰 컴포넌트 모듈화
+- TodoItem에서 제출/취소 버튼과 수정/삭제 버튼의 뷰 로직이 중복되는 코드를 발견하였습니다.
+- 공통 Button 컴포넌트를 만들어 적용하여 결과적으로 반복되는 코드를 줄일 수 있었습니다.
 
-❓best practice인 이유
+❓ 기존 TodoItem 코드
+```
+ {isEdit ? (
+        <div>
+          <button type="button" data-testid="submit-button" onClick={handleSubmit}>
+            제출
+          </button>
+          <button type="button" data-testid="cancel-button" onClick={handleCancel}>
+            취소
+          </button>
+        </div>
+      ) : (
+        <div>
+          <button
+            type="button"
+            data-testid="modify-button"
+            onClick={() => {
+              setIsEdit(true);
+            }}
+          >
+            수정
+          </button>
+          <button type="button" data-testid="delete-button" onClick={handleDelete}>
+            삭제
+          </button>
+        </div>
+      )}
+```
+
+❓ components/atom에 모듈화된 Button 컴포넌트
+```
+interface ButtonProps {
+  dataId: string;
+  buttonText: string;
+  onClickFn: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+function Button({ dataId, buttonText, onClickFn }: ButtonProps) {
+  return (
+    <ElButton data-testid={dataId} onClick={onClickFn}>
+      {buttonText}
+    </ElButton>
+  );
+}
+
+export default Button;
+```
+
+❓ 수정된 TodoItem 버튼
+```
+<div>
+  <Button
+      dataId={isEdit ? 'submit-button' : 'modify-button'}
+      buttonText={isEdit ? '제출' : '수정'}
+      onClickFn={isEdit ? handleEdit : toggleEdit}
+   />
+  <Button
+      dataId={isEdit ? 'cancel-button' : 'delete-button'}
+      buttonText={isEdit ? '취소' : '삭제'}
+      onClickFn={isEdit ? handleEditCancel : handleDelete}
+   />
+</div>
+```
+
 
 ## ⚙️ 실행 방법
 
