@@ -67,19 +67,14 @@ export default function useTodos() {
   };
 
   const mutate = async (args: Mutate) => {
-    const { method, id } = args;
-    let result: AxiosResponse;
-
     const request = generateRequest(args);
+
     try {
-      result = await TodoApi(request);
+      const result = await TodoApi(request);
       const { status } = result;
 
-      if (status === STATUS.OK || status === STATUS.CREATED) {
-        setApiResponse({ response: result, method });
-      }
-      if (status === STATUS.NO_CONTENT) {
-        setApiResponse({ response: result, method, id });
+      if (status === STATUS.OK || status === STATUS.CREATED || status === STATUS.NO_CONTENT) {
+        setApiResponse({ response: result, ...args });
       }
     } catch (axiosError) {
       if (axiosError instanceof AxiosError) {
